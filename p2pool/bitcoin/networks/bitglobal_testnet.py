@@ -12,9 +12,8 @@ P2P_PORT = 18222
 ADDRESS_VERSION = 111
 RPC_PORT = 18444
 RPC_CHECK = defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
-            'bitcoinaddress' in (yield bitcoind.rpc_help()) and
-            (yield bitcoind.rpc_getblockchaininfo())['chain'] == 'test'
-        ))
+            (yield bitcoind.rpc_getblockchaininfo())['chain'] == 'test')
+    )
 SUBSIDY_FUNC = lambda height: 50*100000000 >> (height + 1)//210000
 POW_FUNC = data.hash256
 BLOCK_PERIOD = 600 # s

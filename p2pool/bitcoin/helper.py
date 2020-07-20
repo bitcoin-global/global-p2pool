@@ -23,9 +23,9 @@ def check(bitcoind, net):
     
     try:
         blockchaininfo = yield bitcoind.rpc_getblockchaininfo()
-        softforks_supported = set(item['id'] for item in blockchaininfo.get('softforks', []))
+        softforks_supported = set(item for item in blockchaininfo.get('softforks', []))
         try:
-            softforks_supported |= set(item['id'] for item in blockchaininfo.get('bip9_softforks', []))
+            softforks_supported |= set(item for item in blockchaininfo.get('bip9_softforks', []))
         except TypeError: # https://github.com/bitcoin/bitcoin/pull/7863
             softforks_supported |= set(item for item in blockchaininfo.get('bip9_softforks', []))
     except jsonrpc.Error_for_code(-32601): # Method not found
