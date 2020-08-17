@@ -17,9 +17,9 @@ PREFIX = '2472ef181efcd37b'.decode('hex')
 P2P_PORT = 9222
 MIN_TARGET = 0
 MAX_TARGET = 2**256//2**32 - 1
-PERSIST = True
+PERSIST = False
 WORKER_PORT = 9223
-BOOTSTRAP_ADDRS = 'dnsseed.bitcoin-global.io dnsseed.bitcoin-global.dev dnsseed.bitcoin-global.co 35.209.184.27 35.215.178.52 35.213.247.170 35.210.156.237'.split(' ')
+BOOTSTRAP_ADDRS = 'dnsseed.bitcoin-global.io dnsseed.bitcoin-global.dev dnsseed.bitcoin-global.co'.split(' ')
 ANNOUNCE_CHANNEL = '#p2pool'
 VERSION_CHECK = lambda v: None if 100000 <= v else 'Bitcoin Global version too old. Upgrade to 0.11.2 or newer!' # not a bug. BIP65 support is ensured by SOFTFORKS_REQUIRED
 VERSION_WARNING = lambda v: None

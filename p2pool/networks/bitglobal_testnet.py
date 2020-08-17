@@ -13,7 +13,7 @@ MIN_TARGET = 0
 MAX_TARGET = 2**256//2**32 - 1
 PERSIST = False
 WORKER_PORT = 19223
-BOOTSTRAP_ADDRS = 'test-dnsseed.bitcoin-global.io test-dnsseed.bitcoin-global.dev test-dnsseed.bitcoin-global.co 35.208.105.132 35.206.179.60 35.215.138.105'.split(' ')
+BOOTSTRAP_ADDRS = 'test-dnsseed.bitcoin-global.io test-dnsseed.bitcoin-global.dev test-dnsseed.bitcoin-global.co'.split(' ')
 ANNOUNCE_CHANNEL = '#p2pool-alt'
 VERSION_CHECK = lambda v: None if 100000 <= v else 'Bitcoin Global version too old. Upgrade to 0.11.2 or newer!' # not a bug. BIP65 support is ensured by SOFTFORKS_REQUIRED
 VERSION_WARNING = lambda v: None
